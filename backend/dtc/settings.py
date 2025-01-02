@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    #for enabling session
+    #default stores the session to the db 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -81,6 +83,16 @@ DATABASES = {
     }
 }
 
+
+# Cache
+CACHES={
+    "default":{
+        "BACKEND": "django.core.cache.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",
+    }
+
+
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
