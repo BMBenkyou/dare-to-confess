@@ -7,6 +7,7 @@ def set_user_session(request):
     request.session['username'] = 'berna'
     request.session['room_code'] = '1234'
 
+def posts():
 
 
 
